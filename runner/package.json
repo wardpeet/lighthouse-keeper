@@ -1,0 +1,20 @@
+{
+  "name": "lighthouse-keeper-runner",
+  "version": "0.0.1",
+  "description": "Runner",
+  "main": "lib/index.js",
+  "author": "Ward Peeters",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@google-cloud/storage": "^1.5.2",
+    "execa": "^0.9.0",
+    "firebase": "^4.9.1",
+    "firebase-admin": "^5.8.2",
+    "lighthouse": "https://github.com/GoogleChrome/lighthouse.git#revertdatauri"
+  },
+  "scripts": {
+    "start": "node runner.js",
+    "lighthouse": "lighthouse"
+  }
+}
