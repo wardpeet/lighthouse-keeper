@@ -1,0 +1,16 @@
+{
+  "name": "lighthouse-keeper-runner",
+  "version": "0.0.1",
+  "description": "Runner",
+  "main": "lib/index.js",
+  "author": "Ward Peeters",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "lighthouse": "https://github.com/GoogleChrome/lighthouse.git#master"
+  },
+  "scripts": {
+    "start": "lighthouse --chrome-flags=\"--headless\" --output-path=stdout",
+    "build": "docker build -t lighthouse_keeper ."
+  }
+}
