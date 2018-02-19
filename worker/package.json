@@ -11,6 +11,6 @@
   },
   "scripts": {
     "start": "lighthouse --chrome-flags=\"--headless\" --output-path=stdout",
-    "build": "docker build -t lighthouse_keeper ."
+    "build": "docker build -t lighthouse_keeper-worker ."
   }
 }

@@ -23,15 +23,15 @@ RUN chmod +x /usr/local/bin/dumb-init
 ### branch optional
 ARG LIGHTHOUSE_BRANCH=master
 
-COPY package.json ./
-RUN sed -i -e 's/lighthouse\.git#master/lighthouse\.git#'$LIGHTHOUSE_BRANCH'/g' package.json
-
-RUN yarn --production
-
 # Add a chrome user and setup home dir.
 RUN groupadd -r chrome && useradd -r -m -g chrome -G audio,video chrome && \
     mkdir -p /home/chrome/reports && \
     chown -R chrome:chrome /home/chrome
 
-USER chrome
 WORKDIR /home/chrome/
+COPY package.json .
+RUN sed -i -e 's/lighthouse\.git#master/lighthouse\.git#'$LIGHTHOUSE_BRANCH'/g' package.json
+
+USER chrome
+
+RUN yarn --production
